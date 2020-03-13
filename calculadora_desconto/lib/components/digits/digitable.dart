@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class Digitable extends StatelessWidget {
+  final double initialValue;
+  final void Function(double) cb;
+
+  Digitable(
+    this.initialValue,
+    this.cb,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: TextField(
+        decoration: new InputDecoration(labelText: "Enter your number"),
+        keyboardType: TextInputType.number,
+        controller: new TextEditingController(
+          text: initialValue.toString()
+        ),
+        onSubmitted: (String value){
+          cb(double.tryParse(value.replaceFirst(',', '.')));
+        }
+      ),
+    );
+  }
+}
