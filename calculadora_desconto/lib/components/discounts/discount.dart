@@ -2,12 +2,12 @@ import 'package:calculadora_desconto/models/memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class Descont extends StatelessWidget {
+class Discount extends StatelessWidget {
   final Memory memory;
   final void Function(int) cbChangeDesc;
   final void Function(String) cbChangetype;
 
-  Descont(
+  Discount(
     this.memory,
     this.cbChangeDesc, 
     this.cbChangetype,
@@ -19,7 +19,7 @@ class Descont extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Expanded(
-            flex: 7,
+            flex: 5,
             child: Slider.adaptive(
               min: 0,
               max: 100,
@@ -30,9 +30,9 @@ class Descont extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 3,
+            flex: 2,
             child: TextField(
-              decoration: new InputDecoration(labelText: 'Percent'),
+              decoration: new InputDecoration(labelText: 'Percentual'),
               keyboardType: TextInputType.number,
               inputFormatters: <TextInputFormatter>
               [
@@ -46,30 +46,37 @@ class Descont extends StatelessWidget {
               },
             ),
           ),
-          DropdownButton<String>(
-            value: memory.type,
-            icon: Icon(Icons.arrow_downward),
-            iconSize: 24,
-            elevation: 16,
-            style: TextStyle(
-              color: Colors.deepPurple
+          SizedBox(width: 5,),
+          Expanded(
+            flex: 2,
+            child: Padding(
+              padding: EdgeInsets.only(top: 30.0),
+              child: DropdownButton<String>(
+                value: memory.typeCalc.type,
+                icon: Icon(memory.typeCalc.icon),
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(
+                  color: memory.typeCalc.color
+                ),
+                underline: Container(
+                  height: 2,
+                  color: memory.typeCalc.color,
+                ),
+                onChanged: (String newValue) {
+                  cbChangetype(newValue);
+                },
+                items: <String>['Desconto', 'acréscimo']
+                  .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  })
+                  .toList(),
+              ), 
             ),
-            underline: Container(
-              height: 2,
-              color: Colors.deepPurpleAccent,
-            ),
-            onChanged: (String newValue) {
-              cbChangetype(newValue);
-            },
-            items: <String>['Desc', 'acres']
-              .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              })
-              .toList(),
-          ),
+          )
         ],
       ),
     );

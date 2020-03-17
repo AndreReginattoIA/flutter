@@ -1,4 +1,4 @@
-import 'package:calculadora_desconto/components/desconts/descont.dart';
+import 'package:calculadora_desconto/components/discounts/discount.dart';
 import 'package:calculadora_desconto/components/digits/rowDigit.dart';
 import 'package:calculadora_desconto/models/memory.dart';
 import 'package:flutter/material.dart';
@@ -34,15 +34,18 @@ class _CalcStateState extends State<CalcState> {
   Widget build(BuildContext context) {
       return new Scaffold(
       backgroundColor: Colors.white,
-      body: new Container(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 20.0),
-          child: Column(
-            children: <Widget>[
-              RowDigit(memory.initialValue, memory.result, _setInitialValue),
-              Descont(memory, _onChangeDesc, _setType),
-            ],
+      appBar: AppBar(
+        title: 
+          Text(
+            'Calculadora de descontos'
           ),
+        ),
+      body: new Container(
+        child: Column(
+          children: <Widget>[
+            RowDigit(memory.initialValue, memory.result, _setInitialValue),
+            Discount(memory, _onChangeDesc, _setType),
+          ],
         ),
       ),
     );

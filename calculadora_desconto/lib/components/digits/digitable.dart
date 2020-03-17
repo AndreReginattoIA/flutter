@@ -14,14 +14,15 @@ class Digitable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: TextField(
-        decoration: new InputDecoration(labelText: "Enter your number"),
+        decoration: new InputDecoration(labelText: "Digite um número"),
         keyboardType: TextInputType.number,
         controller: new TextEditingController(
           text: initialValue.toString()
         ),
         onSubmitted: (String value){
           cb(double.tryParse(value.replaceFirst(',', '.')));
-        }
+        },
+        
       ),
     );
   }

@@ -12,7 +12,7 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: TextField(
-        decoration: new InputDecoration(labelText: "Your result"),
+        decoration: new InputDecoration(labelText: "Seu resultado"),
         enabled: false,
         controller: new TextEditingController(
           text: result.toString()

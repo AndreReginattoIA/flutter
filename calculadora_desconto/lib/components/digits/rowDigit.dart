@@ -21,6 +21,7 @@ class RowDigit extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Digitable(initialValue, cbInitialValue),
+          SizedBox(width: 40,),
           Result(result),
         ],
       ),
