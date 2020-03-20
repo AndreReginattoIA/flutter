@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "708258605686",
+    "firebase_url": "https://flutter-ads-1b3e2.firebaseio.com",
+    "project_id": "flutter-ads-1b3e2",
+    "storage_bucket": "flutter-ads-1b3e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708258605686:android:c12104d3e8b63a54504d57",
+        "android_client_info": {
+          "package_name": "com.example.flutter_admob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708258605686-cr7csen4fcirj44p1ule4lofd3ufnafb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqphjNwdhn0OO6GBpz18WgyTRFP99aaSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708258605686-cr7csen4fcirj44p1ule4lofd3ufnafb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
