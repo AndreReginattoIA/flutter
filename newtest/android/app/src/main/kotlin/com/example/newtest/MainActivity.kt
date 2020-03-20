@@ -1,4 +1,4 @@
-package com.example.flutter_admob
+package com.example.newtest
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
