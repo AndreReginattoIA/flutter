@@ -23,7 +23,10 @@ class Memory{
   }
 
   void setInitialValue(double newInitialValue){
-    _initialValue = newInitialValue;
+    if (newInitialValue != null)
+      _initialValue = newInitialValue;
+    else
+      _initialValue = 0;
     setDesc();
   }
 

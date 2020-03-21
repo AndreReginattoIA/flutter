@@ -19,7 +19,7 @@ class Discount extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Expanded(
-            flex: 5,
+            flex: 2,
             child: Slider.adaptive(
               min: 0,
               max: 100,
@@ -30,7 +30,6 @@ class Discount extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 2,
             child: TextField(
               decoration: new InputDecoration(labelText: 'Percentual'),
               keyboardType: TextInputType.number,
@@ -38,23 +37,19 @@ class Discount extends StatelessWidget {
               [
                 WhitelistingTextInputFormatter.digitsOnly,
               ],
-              controller: new TextEditingController(
-                text: memory.descont.toString(),
-              ),
-              onSubmitted: (String value) {
+              onChanged: (String value) {
                 cbChangeDesc(int.tryParse(value));
               },
             ),
           ),
-          SizedBox(width: 5,),
+          SizedBox(width: 3,),
           Expanded(
-            flex: 2,
             child: Padding(
               padding: EdgeInsets.only(top: 30.0),
               child: DropdownButton<String>(
                 value: memory.typeCalc.type,
                 icon: Icon(memory.typeCalc.icon),
-                iconSize: 24,
+                iconSize: 10,
                 elevation: 16,
                 style: TextStyle(
                   color: memory.typeCalc.color

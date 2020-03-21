@@ -16,10 +16,7 @@ class Digitable extends StatelessWidget {
       child: TextField(
         decoration: new InputDecoration(labelText: "Digite um número"),
         keyboardType: TextInputType.number,
-        controller: new TextEditingController(
-          text: initialValue.toString()
-        ),
-        onSubmitted: (String value){
+        onChanged: (String value){
           cb(double.tryParse(value.replaceFirst(',', '.')));
         },
         
