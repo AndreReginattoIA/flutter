@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/material/colors.dart';
 
 class TypeCalc {
   Color color = Colors.blue;
@@ -7,7 +6,6 @@ class TypeCalc {
   String type = 'Desconto';
 
   TypeCalc(
-    @required
     String type
   );
 

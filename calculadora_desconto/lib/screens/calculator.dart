@@ -2,7 +2,6 @@ import 'package:calculadora_desconto/components/discounts/discount.dart';
 import 'package:calculadora_desconto/components/digits/rowDigit.dart';
 import 'package:calculadora_desconto/models/memory.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_admob/firebase_admob.dart';
 
 class CalcState extends StatefulWidget {
 
