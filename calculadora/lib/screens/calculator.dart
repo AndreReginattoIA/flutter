@@ -18,6 +18,7 @@ class _CalculatorState extends State<Calculator> {
       memory.applyCommand(command);
     });
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +29,14 @@ class _CalculatorState extends State<Calculator> {
     return MaterialApp(
       home:Column(
         children: <Widget>[
-          Display(memory.value),
-          Keyboard(_onPressed),
+          Expanded(
+            flex: 1,
+            child: Display(memory.value),
+          ),
+          Expanded(
+            flex: 2,
+            child: Keyboard(_onPressed)
+          ),
         ],)
     );
   }

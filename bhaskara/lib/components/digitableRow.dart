@@ -13,9 +13,11 @@ class DigitableRow extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: Digitable('A', controller.memory.changeA),
-          ),Expanded(
+          ),
+          Expanded(
             child: Digitable('B', controller.memory.changeB),
-          ),Expanded(
+          ),
+          Expanded(
             child: Digitable('C', controller.memory.changeC),
           ),
         ],

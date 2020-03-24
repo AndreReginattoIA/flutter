@@ -10,9 +10,7 @@ class Display extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded( 
-      flex: 1,
-      child: Container(
+    return Container(
         color: Color.fromRGBO(4, 48, 48, 1),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -36,7 +34,6 @@ class Display extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );  
+      );  
   }
 }
