@@ -7,10 +7,12 @@ class Discount extends StatelessWidget {
   final void Function(int) cbChangeDesc;
   final void Function(String) cbChangetype;
 
+  int descValue;
+
   Discount(
     this.memory,
     this.cbChangeDesc, 
-    this.cbChangetype,
+    this.cbChangetype, 
   );
 
   @override
@@ -37,7 +39,10 @@ class Discount extends StatelessWidget {
               [
                 WhitelistingTextInputFormatter.digitsOnly,
               ],
-              onChanged: (String value) {
+              controller: new TextEditingController(
+                text: memory.descont.toString(),
+              ),
+              onSubmitted: (String value) {
                 cbChangeDesc(int.tryParse(value));
               },
             ),
@@ -61,7 +66,7 @@ class Discount extends StatelessWidget {
                 onChanged: (String newValue) {
                   cbChangetype(newValue);
                 },
-                items: <String>['Desconto', 'acréscimo']
+                items: <String>['Desconto', 'Acréscimo']
                   .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,

@@ -1,3 +1,4 @@
+import 'package:calculadora_desconto/components/admob.dart';
 import 'package:calculadora_desconto/components/discounts/discount.dart';
 import 'package:calculadora_desconto/components/digits/rowDigit.dart';
 import 'package:calculadora_desconto/models/memory.dart';
@@ -37,7 +38,7 @@ class _CalcStateState extends State<CalcState> {
       appBar: AppBar(
         title: 
           Text(
-            'Calculadora de descontos'
+            'Calculadora de Porcentagem'
           ),
         ),
       body: new Container(
@@ -45,6 +46,7 @@ class _CalcStateState extends State<CalcState> {
           children: <Widget>[
             RowDigit(memory.initialValue, memory.result, _setInitialValue),
             Discount(memory, _onChangeDesc, _setType),
+            MyApp(),
           ],
         ),
       ),

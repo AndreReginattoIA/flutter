@@ -1,15 +1,13 @@
-import 'package:bhaskara/models/memory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 class Digitable extends StatefulWidget {
-
   final String title;
-  final Memory memory;
+  final Function(int) change;
 
   Digitable(
-    this.title,
-    this.memory,
+    this.title, this.change,
   );
 
   @override
@@ -17,26 +15,23 @@ class Digitable extends StatefulWidget {
 }
 
 class _DigitableState extends State<Digitable> {
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Text(this.widget.title+' = '),
-        
+        Text(this.widget.title + ' = '),
         Expanded(
-          child: TextField(
-            decoration: new InputDecoration(labelText: "Digite um número"),
-            keyboardType: TextInputType.number,
-            inputFormatters: <TextInputFormatter>[
-              WhitelistingTextInputFormatter.digitsOnly,
-            ],
-            onChanged: (newValue){
-              setState(() {
-                this.widget.memory.setNumber(this.widget.title, int.tryParse(newValue));
-                this.widget.memory.calcDelta();
-              });
-            },
-          ),
+          child: Observer(builder: (_) {
+            return TextField(
+                decoration: new InputDecoration(labelText: "Digite um número"),
+                keyboardType: TextInputType.numberWithOptions(
+                  signed: true,
+                ),
+                onChanged: (String newValue) {
+                  this.widget.change(int.tryParse(newValue));
+                });
+          }),
         ),
       ],
     );

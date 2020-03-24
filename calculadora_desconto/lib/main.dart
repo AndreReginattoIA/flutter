@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-       title: 'Discount calculator',
+       title: 'Calculadora de Porcentagem',
        home: CalcState(),
     );
   }

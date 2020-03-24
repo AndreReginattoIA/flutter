@@ -1,11 +1,8 @@
 import 'package:bhaskara/components/calc.dart';
 import 'package:bhaskara/components/digitableRow.dart';
-import 'package:bhaskara/models/memory.dart';
 import 'package:flutter/material.dart';
 
 class Display extends StatelessWidget {
-  
-  final Memory memory = Memory();
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +15,8 @@ class Display extends StatelessWidget {
       backgroundColor: Colors.white,
       body: new Column(
         children: <Widget>[
-          DigitableRow(memory),
-          Calc(memory),
+          DigitableRow(),
+          Calc(),
         ],
       ),
     );

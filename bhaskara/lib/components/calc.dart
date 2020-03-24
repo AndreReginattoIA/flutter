@@ -1,19 +1,20 @@
-import 'package:bhaskara/models/memory.dart';
+import 'package:bhaskara/components/bhaskaraCalcRow.dart';
+import 'package:bhaskara/components/deltaCalc.dart';
 import 'package:flutter/material.dart';
 
 class Calc extends StatelessWidget {
-  final Memory memory;
   
-  Calc(
-    this.memory
-  );
 
-  
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-      child: Text(memory.getDelta.toString()),
+
+    return Column(
+      children: <Widget>[
+        SizedBox(height: 15.0,),
+        DeltaCalc(),
+        SizedBox(height: 5.0,),
+        BhaskaraCalcRow(),
+      ] 
     );
   }
 }
