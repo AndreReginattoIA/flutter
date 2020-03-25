@@ -1,3 +1,4 @@
+import 'package:bhaskara/admob/admob.dart';
 import 'package:bhaskara/components/calc.dart';
 import 'package:bhaskara/components/digitableRow.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class Display extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title:Text(
-          'Calculado de bhaskara'
+          'Calculadora de Bhaskara'
         ),
       ),
       backgroundColor: Colors.white,
@@ -17,6 +18,8 @@ class Display extends StatelessWidget {
         children: <Widget>[
           DigitableRow(),
           Calc(),
+          MyBanner(),
+          Text(Colors.blue.toString())
         ],
       ),
     );

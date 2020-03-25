@@ -11,10 +11,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Calculadora de bhaskara',
+      title: 'Calculadora de Baskara',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

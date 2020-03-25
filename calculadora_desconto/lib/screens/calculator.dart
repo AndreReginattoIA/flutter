@@ -46,7 +46,7 @@ class _CalcStateState extends State<CalcState> {
           children: <Widget>[
             RowDigit(memory.initialValue, memory.result, _setInitialValue),
             Discount(memory, _onChangeDesc, _setType),
-            MyApp(),
+            MyBanner(),
           ],
         ),
       ),

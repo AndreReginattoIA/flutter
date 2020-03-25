@@ -7,8 +7,11 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="bhaskara"
+        android:label="Calculadora de Bhaskara"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9210620758071586~9291895186"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
