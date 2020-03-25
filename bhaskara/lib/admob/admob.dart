@@ -21,7 +21,7 @@ class MyBannerState extends State<MyBanner>{
   );
 
   BannerAd myBanner = BannerAd(
-    adUnitId: BannerAd.testAdUnitId,
+    adUnitId: "ca-app-pub-9210620758071586/6280882175",
     size: AdSize.smartBanner,
     targetingInfo: targetingInfo,
     listener: (MobileAdEvent event) {
@@ -38,7 +38,7 @@ class MyBannerState extends State<MyBanner>{
   
   @override
   void initState() {
-    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-9210620758071586~9291895186");
+    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-9210620758071586~5382378254");
     
     super.initState();
 

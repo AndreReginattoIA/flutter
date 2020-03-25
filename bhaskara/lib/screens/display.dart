@@ -19,7 +19,6 @@ class Display extends StatelessWidget {
           DigitableRow(),
           Calc(),
           MyBanner(),
-          Text(Colors.blue.toString())
         ],
       ),
     );
