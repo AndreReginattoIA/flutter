@@ -38,7 +38,7 @@ class MyBannerState extends State<MyBanner>{
   
   @override
   void initState() {
-    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-9210620758071586~9291895186");
+    FirebaseAdMob.instance.initialize(appId: "ca-app-pub-9210620758071586~1080278965");
     
     super.initState();
 

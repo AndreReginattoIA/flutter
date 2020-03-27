@@ -1,4 +1,4 @@
-package com.parable.calculadora_desconto
+package com.example.mvc
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

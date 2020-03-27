@@ -21,6 +21,8 @@ class MyBannerState extends State<MyBanner>{
   );
 
   BannerAd myBanner = BannerAd(
+    // "ca-app-pub-9210620758071586/6280882175"
+    // BannerAd.testAdUnitId
     adUnitId: "ca-app-pub-9210620758071586/6280882175",
     size: AdSize.smartBanner,
     targetingInfo: targetingInfo,
