@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvc/home_page.dart';
+import 'package:mvc/login_controller.dart';
+import 'package:mvc/login_repository.dart';
 
 class LoginPageMVC extends StatefulWidget {
   
@@ -9,11 +11,14 @@ class LoginPageMVC extends StatefulWidget {
 
 class _LoginPageMVCState extends State<LoginPageMVC> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  final _formKey = GlobalKey<FormState>();
+  
+  bool _isLoading = false;
+  LoginController controller;
 
   @override
   void initState(){
     super.initState();
+    controller = LoginController(LoginRepository());
   }
 
   @override
@@ -23,7 +28,7 @@ class _LoginPageMVCState extends State<LoginPageMVC> {
 
   _loginSucess(){
     Navigator.pushReplacement(context, 
-    MaterialPageRoute(builder: (_) => Home_Page()));
+    MaterialPageRoute(builder: (_) => HomePage()));
   }
 
   _loginError(){
@@ -40,6 +45,7 @@ class _LoginPageMVCState extends State<LoginPageMVC> {
     return Scaffold(
       key: _scaffoldKey,
       body: Form(
+        key: controller.formKey,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -50,6 +56,7 @@ class _LoginPageMVCState extends State<LoginPageMVC> {
                   border: OutlineInputBorder(),
                   labelText: "Email",
                 ),
+                onSaved: controller.userEmail,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "the field cannot be null";
@@ -65,6 +72,7 @@ class _LoginPageMVCState extends State<LoginPageMVC> {
                   border: OutlineInputBorder(),
                   labelText: "Password",
                 ),
+                onSaved: controller.userPassword,
                 validator: (value) {
                   if (value.isEmpty) {
                     return "the field cannot be null";
@@ -76,15 +84,22 @@ class _LoginPageMVCState extends State<LoginPageMVC> {
               RaisedButton(
                 padding: EdgeInsets.symmetric(horizontal: 80),
                 textColor: Colors.white,
-                color: Colors.blue,
+                color: Colors.blueGrey[800],
                 child: Text("Enter"),
-                onPressed: () {
-                  if (true) {
+                onPressed: _isLoading ? null : 
+                  () async{
+                  setState(() {
+                    _isLoading = true;
+                  });
+                  if (await controller.login()){
                     _loginSucess();
                   } else {
                     _loginError();
                   }
-                }
+                  setState(() {
+                    _isLoading = false;
+                  });
+                },
               ),
             ],
           ),
