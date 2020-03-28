@@ -7,8 +7,6 @@ class Discount extends StatelessWidget {
   final void Function(int) cbChangeDesc;
   final void Function(String) cbChangetype;
 
-  int descValue;
-
   Discount(
     this.memory,
     this.cbChangeDesc, 
