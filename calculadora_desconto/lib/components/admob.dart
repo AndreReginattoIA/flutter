@@ -20,8 +20,10 @@ class MyBannerState extends State<MyBanner>{
     testDevices: <String>[], // Android emulators are considered test devices
   );
 
+  // "ca-app-pub-9210620758071586/5618289779"
+  // BannerAd.testAdUnitId
   BannerAd myBanner = BannerAd(
-    adUnitId: BannerAd.testAdUnitId,
+    adUnitId: "ca-app-pub-9210620758071586/5618289779",
     size: AdSize.smartBanner,
     targetingInfo: targetingInfo,
     listener: (MobileAdEvent event) {
