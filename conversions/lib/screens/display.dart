@@ -1,7 +1,7 @@
 import 'package:conversions/components/bottom_nav.dart';
 import 'package:conversions/components/list_of.dart';
 import 'package:conversions/models/conversion_type.dart';
-import 'package:conversions/models/numeric_conversions.dart';
+import 'package:conversions/models/numeric_controller.dart';
 import 'package:flutter/material.dart';
 
 class Display extends StatefulWidget {
@@ -11,12 +11,14 @@ class Display extends StatefulWidget {
 
 class _DisplayState extends State<Display> {
   int _selectedIndex = 0;
-  ConversionsType _type = NumericConversions();
+  static ConversionsType _type1 = NumericController();
+  static ConversionsType _type2 = NumericController();
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      _type = NumericConversions();
+      _type1 = NumericController();
+      _type2 = NumericController();
     });
   } 
   
@@ -25,12 +27,12 @@ class _DisplayState extends State<Display> {
       items: <BottomNavigationBarItem>[
         BottomNavBatItem(
           icon: Icon(Icons.business),
-          type: NumericConversions(),
+          type: NumericController,
           title: Text('Numérico'),
         ),
         BottomNavBatItem(
           icon: Icon(Icons.business),
-          type: NumericConversions(),
+          type: NumericController,
           title: Text('Tamanho'),
         ),
       ],
@@ -46,7 +48,7 @@ class _DisplayState extends State<Display> {
       appBar: AppBar(
         title: Text("Conversões")
       ),
-      body: ListOf(_type),
+      body: ListOf(_type1, _type2),
       bottomNavigationBar: _displayBottomNav(),
     );
   }

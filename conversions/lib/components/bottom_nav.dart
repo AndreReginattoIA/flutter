@@ -1,4 +1,3 @@
-import 'package:conversions/models/conversion_type.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBatItem implements BottomNavigationBarItem{
@@ -19,6 +18,6 @@ class BottomNavBatItem implements BottomNavigationBarItem{
   final Widget activeIcon;
   final Widget title;
   final Color backgroundColor;
-  final ConversionsType type;
+  final Type type;
 
 }

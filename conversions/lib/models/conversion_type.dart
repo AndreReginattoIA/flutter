@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 abstract class ConversionsType {
-  Widget displayed();
+  Widget displayed(String radioValue);
 }
