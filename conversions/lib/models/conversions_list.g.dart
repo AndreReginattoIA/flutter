@@ -12,45 +12,55 @@ mixin _$ConversionsList on _ConversionsListBase, Store {
   final _$listAtom = Atom(name: '_ConversionsListBase.list');
 
   @override
-  List<Conversions> get list {
+  List<ConversionAbs> get list {
     _$listAtom.context.enforceReadPolicy(_$listAtom);
     _$listAtom.reportObserved();
     return super.list;
   }
 
   @override
-  set list(List<Conversions> value) {
+  set list(List<ConversionAbs> value) {
     _$listAtom.context.conditionallyRunInAction(() {
       super.list = value;
       _$listAtom.reportChanged();
     }, _$listAtom, name: '${_$listAtom.name}_set');
   }
 
-  final _$selectedAtom = Atom(name: '_ConversionsListBase.selected');
+  final _$indexSelectedAtom = Atom(name: '_ConversionsListBase.indexSelected');
 
   @override
-  String get selected {
-    _$selectedAtom.context.enforceReadPolicy(_$selectedAtom);
-    _$selectedAtom.reportObserved();
-    return super.selected;
+  int get indexSelected {
+    _$indexSelectedAtom.context.enforceReadPolicy(_$indexSelectedAtom);
+    _$indexSelectedAtom.reportObserved();
+    return super.indexSelected;
   }
 
   @override
-  set selected(String value) {
-    _$selectedAtom.context.conditionallyRunInAction(() {
-      super.selected = value;
-      _$selectedAtom.reportChanged();
-    }, _$selectedAtom, name: '${_$selectedAtom.name}_set');
+  set indexSelected(int value) {
+    _$indexSelectedAtom.context.conditionallyRunInAction(() {
+      super.indexSelected = value;
+      _$indexSelectedAtom.reportChanged();
+    }, _$indexSelectedAtom, name: '${_$indexSelectedAtom.name}_set');
   }
 
   final _$_ConversionsListBaseActionController =
       ActionController(name: '_ConversionsListBase');
 
   @override
-  dynamic setSelected(String newValue) {
+  dynamic setList(List<ConversionAbs> newValue) {
     final _$actionInfo = _$_ConversionsListBaseActionController.startAction();
     try {
-      return super.setSelected(newValue);
+      return super.setList(newValue);
+    } finally {
+      _$_ConversionsListBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic setIndexSelected(int newValue) {
+    final _$actionInfo = _$_ConversionsListBaseActionController.startAction();
+    try {
+      return super.setIndexSelected(newValue);
     } finally {
       _$_ConversionsListBaseActionController.endAction(_$actionInfo);
     }
@@ -58,7 +68,8 @@ mixin _$ConversionsList on _ConversionsListBase, Store {
 
   @override
   String toString() {
-    final string = 'list: ${list.toString()},selected: ${selected.toString()}';
+    final string =
+        'list: ${list.toString()},indexSelected: ${indexSelected.toString()}';
     return '{$string}';
   }
 }

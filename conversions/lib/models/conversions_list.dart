@@ -1,5 +1,5 @@
-import 'package:conversions/lists/lists.dart';
-import 'package:conversions/models/conversions.dart';
+import 'package:conversions/models/conversion_abs.dart';
+import 'package:conversions/utils/lists.dart';
 import 'package:mobx/mobx.dart';
 part 'conversions_list.g.dart';
 
@@ -7,10 +7,20 @@ class ConversionsList = _ConversionsListBase with _$ConversionsList;
 
 abstract class _ConversionsListBase with Store {
   @observable
-  List<Conversions> list = [Conversions(description: "sadsad")];
+  List<ConversionAbs> list = teste;
+  @action
+  setList(List<ConversionAbs> newValue) => list = newValue;
 
   @observable
-  String selected = '';
+  int indexSelected = 0;
   @action
-  setSelected(String newValue) => selected = newValue;
+  setIndexSelected(int newValue) => indexSelected = newValue;
+
+  String getFromNormal(String baseValue){
+    return list[indexSelected].fromNormal(baseValue);
+  }
+
+  String getToNormal(String baseValue){
+    return list[indexSelected].toNormal(baseValue);
+  }
 }
