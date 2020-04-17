@@ -1,0 +1,4 @@
+lib/app/modules/product/register/register_page.dart
+test/app/modules/product/register/register_page_test.dart
+lib/app/modules/product/register/register_controller.dart
+test/app/modules/product/register/register_controller_test.dart
