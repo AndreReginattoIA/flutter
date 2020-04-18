@@ -21,6 +21,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.2
   mysql1:
+  postgres: ^2.1.0
+  hasura_connect:
 
 dev_dependencies:
   flutter_test:

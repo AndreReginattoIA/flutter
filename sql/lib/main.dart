@@ -36,21 +36,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  var db = new Mysql();
-  var nome = '';
+  var mysql = new Mysql();
+  var postgres = new Postgres();
+  var has = new Hasura();
 
   void _getbd() {
-    db.getConnection().then((conn){
-      String sql = 'select * from clientes';
-      conn.query(sql).then((results){
-        for(var row in results){
-          setState(() {
-            nome = row[0];
-          });
-        }
-      });
-    });
+    has.getFirstProduct();
+      
   }
 
   @override
@@ -91,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$nome',
+              'aa',
               style: Theme.of(context).textTheme.display1,
             ),
           ],
