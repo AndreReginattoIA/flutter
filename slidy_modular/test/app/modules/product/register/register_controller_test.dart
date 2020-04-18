@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:slidy_modular/app/modules/product/register/register_controller.dart';
 import 'package:slidy_modular/app/modules/product/product_module.dart';
 
 void main() {

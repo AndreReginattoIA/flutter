@@ -1,0 +1,2 @@
+lib/app/modules/product/register/register_repository.dart
+test/app/modules/product/register/register_repository_test.dart

@@ -8,8 +8,8 @@ part of 'product_model.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$Product on _ProductBase, Store {
-  final _$idAtom = Atom(name: '_ProductBase.id');
+mixin _$ProductModel on _ProductModelBase, Store {
+  final _$idAtom = Atom(name: '_ProductModelBase.id');
 
   @override
   int get id {
@@ -26,7 +26,7 @@ mixin _$Product on _ProductBase, Store {
     }, _$idAtom, name: '${_$idAtom.name}_set');
   }
 
-  final _$descriptionAtom = Atom(name: '_ProductBase.description');
+  final _$descriptionAtom = Atom(name: '_ProductModelBase.description');
 
   @override
   String get description {
@@ -43,25 +43,26 @@ mixin _$Product on _ProductBase, Store {
     }, _$descriptionAtom, name: '${_$descriptionAtom.name}_set');
   }
 
-  final _$_ProductBaseActionController = ActionController(name: '_ProductBase');
+  final _$_ProductModelBaseActionController =
+      ActionController(name: '_ProductModelBase');
 
   @override
   dynamic setId(int newValue) {
-    final _$actionInfo = _$_ProductBaseActionController.startAction();
+    final _$actionInfo = _$_ProductModelBaseActionController.startAction();
     try {
       return super.setId(newValue);
     } finally {
-      _$_ProductBaseActionController.endAction(_$actionInfo);
+      _$_ProductModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   dynamic setDescription(String newValue) {
-    final _$actionInfo = _$_ProductBaseActionController.startAction();
+    final _$actionInfo = _$_ProductModelBaseActionController.startAction();
     try {
       return super.setDescription(newValue);
     } finally {
-      _$_ProductBaseActionController.endAction(_$actionInfo);
+      _$_ProductModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
