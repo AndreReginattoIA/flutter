@@ -2,27 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:slidy_modular/app/components/my_bottom_app_bar.dart';
 import 'package:slidy_modular/app/components/my_floating_action_button.dart';
-import 'package:slidy_modular/app/models/product_model.dart';
-import 'package:slidy_modular/app/modules/product/product_controller.dart';
-import 'package:slidy_modular/app/modules/product/product_module.dart';
-import 'package:slidy_modular/app/modules/product/product_repository.dart';
+import 'package:slidy_modular/app/models/order_model.dart';
+import 'package:slidy_modular/app/modules/order/order_module.dart';
+import 'package:slidy_modular/app/modules/order/order_repository.dart';
+import 'order_controller.dart';
 
-class ProductPage extends StatefulWidget {
+class OrderPage extends StatefulWidget {
   final String title;
-  const ProductPage({Key key, this.title = "Product"}) : super(key: key);
+  const OrderPage({Key key, this.title = "Order"}) : super(key: key);
 
   @override
-  _ProductPageState createState() => _ProductPageState();
+  _OrderPageState createState() => _OrderPageState();
 }
 
-class _ProductPageState extends ModularState<ProductPage, ProductController> {
-  var repo = ProductModule.to.get<ProductRepository>();
-  Stream<List<ProductModel>> products;
+class _OrderPageState extends ModularState<OrderPage, OrderController> {
+  Stream<List<OrderModel>> orders;  
+  OrderRepository repo = OrderModule.to.get<OrderRepository>();
 
   @override
-  initState() {
+  void initState() {
     super.initState();
-    products = repo.allProducts();
+    orders = repo.allOrders();
   }
 
   @override
@@ -31,8 +31,8 @@ class _ProductPageState extends ModularState<ProductPage, ProductController> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: StreamBuilder<List<ProductModel>>(
-        stream: products,
+      body: StreamBuilder<List<OrderModel>>(
+        stream: orders,
         builder: (context, snapshot){
           if (!snapshot.hasData)
             return Center(child: CircularProgressIndicator());
@@ -40,13 +40,13 @@ class _ProductPageState extends ModularState<ProductPage, ProductController> {
             itemCount: snapshot.data.length,
             itemBuilder: (context, index){
               return ListTile(
-                title: Text(snapshot.data[index].description),
+                title: Text(snapshot.data[index].id.toString()),
               );
             }
           );
         },
       ),
-      floatingActionButton: MyFloatActionButton('/Product/Register'),
+      floatingActionButton: MyFloatActionButton('/Order/Register'),
       bottomNavigationBar: MyBottomAppBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

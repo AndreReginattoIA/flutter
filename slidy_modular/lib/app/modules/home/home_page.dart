@@ -20,10 +20,29 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Modular.to.pushNamed('/Products');
-          }
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              child: Text("Products"),
+              onPressed: () {
+                Modular.to.pushNamed('/Product');
+              }
+            ),    
+            RaisedButton(
+              child: Text("Customers"),
+              onPressed: () {
+                Modular.to.pushNamed('/Customer');
+              }
+            ),
+            RaisedButton(
+              child: Text("Orders"),
+              onPressed: () {
+                Modular.to.pushNamed('/Order');
+              }
+            ),
+          ],
         ),
       ),
     );
