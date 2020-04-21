@@ -41,6 +41,7 @@ class _OrderPageState extends ModularState<OrderPage, OrderController> {
             itemBuilder: (context, index){
               return ListTile(
                 title: Text(snapshot.data[index].id.toString()),
+                subtitle: Text(snapshot.data[index].customer.name),
               );
             }
           );

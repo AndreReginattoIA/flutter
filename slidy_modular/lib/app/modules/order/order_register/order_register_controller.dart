@@ -12,6 +12,8 @@ class OrderRegisterController = _OrderRegisterControllerBase
 
 abstract class _OrderRegisterControllerBase with Store {
   final formKey = GlobalKey<FormState>();
+
+  TextEditingController textEditingController = TextEditingController();
   
   OrderModel order = OrderModel();
 

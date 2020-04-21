@@ -18,13 +18,15 @@ class CustomerPage extends StatefulWidget {
 class _CustomerPageState extends ModularState<CustomerPage, CustomerController> {
   CustomerRepository repo = CustomerModule.to.get<CustomerRepository>();
   Stream<List<CustomerModel>> customers;
+  var _tapPosition;
+
+  static const options = ['order']; 
 
   @override
   void initState() {
     super.initState();
     customers = repo.allCustomers();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +44,10 @@ class _CustomerPageState extends ModularState<CustomerPage, CustomerController> 
               if(!snapshot.hasData)
                 return Center(child: CircularProgressIndicator());
               return ListTile(
-                title: Text(snapshot.data[index].name),
+                  title: Text(snapshot.data[index].name),
               );
-            }
+            },
+            
           );
         } 
       ),

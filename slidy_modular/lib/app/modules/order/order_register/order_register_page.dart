@@ -45,7 +45,7 @@ class _OrderRegisterPageState
                 return Text(item.name);
               }, 
               selectedItemBuilder: (CustomerModel selectedItem, VoidCallback deleteSelectedItem) {
-                return ;
+                return Text(controller.order.customer.name);
               },
               queryBuilder: (String query, List<CustomerModel> list) {
                 return list.where((CustomerModel item) => item.name.toLowerCase().contains(query.toLowerCase())).toList();
