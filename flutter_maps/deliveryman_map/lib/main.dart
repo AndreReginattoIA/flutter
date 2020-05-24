@@ -100,7 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
       if (_locationSubscription != null) {
         _locationSubscription.cancel();
       }
-
+      
+      
 
       _locationSubscription = _locationTracker.onLocationChanged.listen((newLocalData) {
         if (_controller != null) {
@@ -156,6 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mapType: MapType.hybrid,
             initialCameraPosition: initialLocation,
             markers: marker,
+            
             circles: Set.of((circle != null) ? [circle] : []),
             onMapCreated: (GoogleMapController controller) {
               _controller = controller;
