@@ -4,18 +4,18 @@ part 'client.g.dart';
 class Client = _ClientBase with _$Client;
 
 abstract class _ClientBase with Store {
-  @observable 
+  @observable
   String name = '';
-  @action 
+  @action
   changeName(String value) => name = value;
 
-  @observable 
+  @observable
   String email = '';
-  @action 
+  @action
   changeEmail(String value) => email = value;
 
-  @observable 
+  @observable
   String cpf = '';
-  @action 
+  @action
   changeCPF(String value) => cpf = value;
 }
