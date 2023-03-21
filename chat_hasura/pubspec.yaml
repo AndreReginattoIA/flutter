@@ -17,8 +17,8 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  hasura_connect: ^1.2.1+1
-  dio: ^3.0.9
+  hasura_connect: ">=1.2.1+1 <5.0.0"
+  dio: ">=3.0.9 <6.0.0"
   rxdart: ^0.24.0
   bloc_pattern: ^2.5.1
   flutter:
@@ -28,7 +28,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
 
 dev_dependencies:
-  mockito: ^4.1.1
+  mockito: ">=4.1.1 <6.0.0"
   flutter_test:
     sdk: flutter
 
